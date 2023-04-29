@@ -11,7 +11,7 @@ public class Welcome {
 			return separerParVirgules(input);
 		
 		}else if (input==input.toUpperCase())
-			sortie.append(input+" !");
+			return screamName(input);
 		else
 			sortie.append(capitaliser(input));
 		return sortie.toString();
@@ -24,11 +24,21 @@ public class Welcome {
 	public static String separerParVirgules (String input) {
 		StringBuilder output= new StringBuilder("Hello");
 		String[] noms=input.split(",");
+		String nomMajuscule=null;
 		for(int i=0;i<noms.length;i++) {
-			output.append(", "+capitaliser(noms[i].trim()));
+			if (noms[i]!= noms[i].toUpperCase())
+				output.append(", "+capitaliser(noms[i].trim()));
+			else
+				nomMajuscule=noms[i].trim();
 		}
+		if (nomMajuscule!=null)
+			output.append(". AND HELLO, "+nomMajuscule+" !");
 		return output.toString();
 	}
 	
+	public static String screamName(String input) {
+		StringBuilder output = new StringBuilder("HELLO, ");
+		return output.append(input+" !").toString();
+	}
 	
 }

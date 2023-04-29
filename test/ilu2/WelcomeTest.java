@@ -27,8 +27,8 @@ class WelcomeTest {
 	
 	@Test
 	void exigence_3() {
-		assertEquals("Hello, JERRY !", testeur.welcome("JERRY"));
-		assertEquals("Hello, THOMAS EDDISSON !", testeur.welcome("THOMAS EDDISSON"));
+		assertEquals("HELLO, JERRY !", testeur.welcome("JERRY"));
+		assertEquals("HELLO, THOMAS EDDISSON !", testeur.welcome("THOMAS EDDISSON"));
 	}
 	
 	@Test
@@ -42,6 +42,12 @@ class WelcomeTest {
 	void exigence_5() {
 		assertEquals ("Hello, Amy, Bob, Jerry",testeur.welcome("Amy, bob,jerry"));
 		assertEquals ("Hello, Manu, Brigitte, Tonton, Tata, Brie", testeur.welcome("manu,  brigitte,tonton,Tata, brie"));
+	}
+	
+	@Test
+	void exigence_6() {
+		assertEquals("Hello, Amy, Jerry. AND HELLO, BOB !",testeur.welcome("Amy, BOB, Jerry"));
+		assertEquals ("Hello, Manu, Brigitte, Tonton, Tata. AND HELLO, BRIE !", testeur.welcome("manu,  brigitte,tonton,Tata, BRIE"));
 	}
 
 }
