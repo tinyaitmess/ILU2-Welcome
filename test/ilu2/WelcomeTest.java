@@ -38,6 +38,10 @@ class WelcomeTest {
 
 	}
 	
-
+	@Test
+	void exigence_5() {
+		assertEquals ("Hello, Amy, Bob, Jerry",testeur.welcome("Amy, bob,jerry"));
+		assertEquals ("Hello, Manu, Brigitte, Tonton, Tata, Brie", testeur.welcome("manu,  brigitte,tonton,Tata, brie"));
+	}
 
 }
