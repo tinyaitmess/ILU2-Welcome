@@ -31,13 +31,13 @@ class WelcomeTest {
 	@Test
 	void exigence_4() {
 		assertEquals("Hello, Amy and Bob",testeur.welcome("amy,bob"));
-		assertEquals ("Hello, Amy and Bob",testeur.welcome("Amy,Bob"));
+		assertEquals ("Hello, AmybeTh and Bob",testeur.welcome("amybeTh,Bob"));
 
 	}
 	
 	@Test
 	void exigence_5() {
-		assertEquals ("Hello, Amy, Bob and Jerry",testeur.welcome("Amy, bob,jerry"));
+		assertEquals ("Hello, Amy, BOb and Jerry",testeur.welcome("Amy, BOb,jerry"));
 		assertEquals ("Hello, Manu, Brigitte, Tonton, Tata and Brie", testeur.welcome("manu,  brigitte,tonton,Tata, brie"));
 	}
 	
@@ -49,9 +49,14 @@ class WelcomeTest {
 	
 	@Test
 	void exigence_7() {
-		assertEquals("Hello, Amy and Jerry. AND HELLO, BOB !",testeur.welcome("Amy, BOB, Jerry"));
+		assertEquals("Hello, Amy and Jerry. AND HELLO, BOB !",testeur.welcome("amy, BOB,Jerry"));
 		assertEquals ("Hello, Manu, Brigitte and Tonton. AND HELLO, TATA AND BRIE !", testeur.welcome("manu, TATA, brigitte,tonton, BRIE"));
 	}
 	
+	@Test
+	void exigence_8() {
+		assertEquals("Hello, Amy and Bob",testeur.welcome("amy        , bob"));
+		assertEquals("Hello, Amy and Jerry. AND HELLO, BOB !",testeur.welcome("   Amy, BOB,  Jerry  "));
+	}
 
 }
