@@ -8,6 +8,8 @@ public class Welcome {
 	}
 	public static String welcome (String input) {
 		StringBuilder sortie = new StringBuilder("Hello, ");
+		if (input==null || input.trim()=="")	
+			return sortie.append("my friend").toString();
 		sortie.append(capitaliser(input));
 		return sortie.toString();
 	}
