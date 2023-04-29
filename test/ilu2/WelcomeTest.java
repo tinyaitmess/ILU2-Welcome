@@ -8,9 +8,6 @@ import org.junit.jupiter.api.Test;
 class WelcomeTest {
 	private Welcome testeur;
 
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-	}
 
 	@Test
 	void exigence_1() {
@@ -33,21 +30,28 @@ class WelcomeTest {
 	
 	@Test
 	void exigence_4() {
-		assertEquals("Hello, Amy, Bob",testeur.welcome("amy,bob"));
-		assertEquals ("Hello, Amy, Bob",testeur.welcome("Amy,Bob"));
+		assertEquals("Hello, Amy and Bob",testeur.welcome("amy,bob"));
+		assertEquals ("Hello, Amy and Bob",testeur.welcome("Amy,Bob"));
 
 	}
 	
 	@Test
 	void exigence_5() {
-		assertEquals ("Hello, Amy, Bob, Jerry",testeur.welcome("Amy, bob,jerry"));
-		assertEquals ("Hello, Manu, Brigitte, Tonton, Tata, Brie", testeur.welcome("manu,  brigitte,tonton,Tata, brie"));
+		assertEquals ("Hello, Amy, Bob and Jerry",testeur.welcome("Amy, bob,jerry"));
+		assertEquals ("Hello, Manu, Brigitte, Tonton, Tata and Brie", testeur.welcome("manu,  brigitte,tonton,Tata, brie"));
 	}
 	
 	@Test
 	void exigence_6() {
-		assertEquals("Hello, Amy, Jerry. AND HELLO, BOB !",testeur.welcome("Amy, BOB, Jerry"));
-		assertEquals ("Hello, Manu, Brigitte, Tonton, Tata. AND HELLO, BRIE !", testeur.welcome("manu,  brigitte,tonton,Tata, BRIE"));
+		assertEquals("Hello, Amy and Jerry. AND HELLO, BOB !",testeur.welcome("Amy, BOB, Jerry"));
+		assertEquals ("Hello, Manu, Brigitte and Tonton. AND HELLO, TATA AND BRIE !", testeur.welcome("manu, TATA, brigitte,tonton, BRIE"));
 	}
+	
+	@Test
+	void exigence_7() {
+		assertEquals("Hello, Amy and Jerry. AND HELLO, BOB !",testeur.welcome("Amy, BOB, Jerry"));
+		assertEquals ("Hello, Manu, Brigitte and Tonton. AND HELLO, TATA AND BRIE !", testeur.welcome("manu, TATA, brigitte,tonton, BRIE"));
+	}
+	
 
 }
