@@ -10,6 +10,8 @@ public class Welcome {
 		StringBuilder sortie = new StringBuilder("Hello, ");
 		if (input==null || input.trim()=="")	
 			return sortie.append("my friend").toString();
+		else if (input==input.toUpperCase())
+			return sortie.append(input+" !").toString();
 		sortie.append(capitaliser(input));
 		return sortie.toString();
 	}
