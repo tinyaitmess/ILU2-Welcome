@@ -2,6 +2,8 @@ package ilu2;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -58,5 +60,13 @@ class WelcomeTest {
 		assertEquals("Hello, Amy and Bob",testeur.welcome("amy        , bob"));
 		assertEquals("Hello, Amy and Jerry. AND HELLO, BOB !",testeur.welcome("   Amy, BOB,  Jerry  "));
 	}
+	
+	@Test
+	void exigence_9() {
+		assertEquals ("Hello, Bob (*3)",testeur.welcome("bob  ,Bob,  bob"));
+		//assertEquals ("")
+		assertEquals("Hello, Bob (*3) and Amy. AND HELLO, JERRY (*2) !",testeur.welcome("bob, JERRY, amy, bob, JERRY, bob"));
+	}
+	
 
 }
